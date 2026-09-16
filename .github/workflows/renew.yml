@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '30 1 * * 3' # 根据到期时间在星期几 提前一天,比如星期三到期，cron写星期二即可
-    - cron: '30 1 * * 4' # 星期四，北京时间13:30
+    #- cron: '30 1 * * 4' # 星期四，北京时间13:30
 
 permissions:
   actions: write
