@@ -228,7 +228,7 @@ def renew_service(page):
         create_btn = page.locator('button:has-text("Create Invoice")')
 
         modal_opened = False
-        for i in range(3):
+        for i in range(5):
             try:
                 renew_btn.wait_for(state="visible", timeout=10000)
                 renew_btn.scroll_into_view_if_needed()
@@ -236,7 +236,7 @@ def renew_service(page):
                 renew_btn.click()
 
                 # 等待一小段时间，检测是否出现“未到续期时间”弹窗
-                time.sleep(2)
+                time.sleep(20)
                 page_text = page.locator("body").inner_text()
                 if "Renewal Restricted" in page_text or "can only renew" in page_text.lower():
                     log("⚠️ 未到续期时间，无法续期。")
